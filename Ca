@@ -1,0 +1,212 @@
+1. Responsive College Department Page (HTML+CSS+Bootstrap)
+html
+<!DOCTYPE html>
+<html><head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<style>
+.navbar-brand{font-weight:bold}
+.about{padding:40px 20px;text-align:center;background:#f8f9fa}
+.card{margin-bottom:20px}
+footer{background:#212529;color:white;text-align:center;padding:15px}
+</style></head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">CS Department</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>The Computer Science Department offers quality education in software and computing.</p>
+</section>
+
+<section class="container py-4" id="courses">
+  <h2 class="text-center mb-4">Courses</h2>
+  <div class="row">
+    <div class="col-md-4"><div class="card"><div class="card-body"><h5 class="card-title">MCA</h5><p class="card-text">Master of Computer Applications</p></div></div></div>
+    <div class="col-md-4"><div class="card"><div class="card-body"><h5 class="card-title">BCA</h5><p class="card-text">Bachelor of Computer Applications</p></div></div></div>
+    <div class="col-md-4"><div class="card"><div class="card-body"><h5 class="card-title">MSc CS</h5><p class="card-text">Master of Science in CS</p></div></div></div>
+  </div>
+</section>
+
+<footer><p>&copy; 2026 CS Department. All rights reserved.</p></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body></html>
+2. CSS Box Model — Student ID Card
+html
+<!DOCTYPE html>
+<html><head>
+<style>
+body{font-family:Arial;display:flex;justify-content:center;margin-top:50px}
+.id-card{
+  width:300px;
+  height:180px;
+  margin:20px;             /* space outside */
+  padding:20px;             /* space between content and border */
+  border:3px solid #333;    /* border */
+  background-color:#e8f4f8; /* distinguish content area */
+  border-radius:10px;
+}
+.id-card h2{margin:0 0 10px 0;color:#0d6efd}
+.id-card p{margin:5px 0}
+</style></head>
+<body>
+<div class="id-card">
+  <h2>Student ID Card</h2>
+  <p><b>Name:</b> John Doe</p>
+  <p><b>Reg No:</b> MCA2026001</p>
+  <p><b>Course:</b> MCA</p>
+  <p><b>Email:</b> john@example.com</p>
+</div>
+</body></html>
+3. Bootstrap Registration Portal (Navbar + Buttons + Form)
+html
+<!DOCTYPE html>
+<html><head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head><body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">College Portal</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container text-center my-4">
+  <button class="btn btn-success mx-2">Apply Now</button>
+  <button class="btn btn-info mx-2">Download Brochure</button>
+  <button class="btn btn-warning mx-2">Contact Us</button>
+</div>
+
+<div class="container">
+  <h3>Registration Form</h3>
+  <form>
+    <div class="mb-3"><label>Name</label><input type="text" class="form-control"></div>
+    <div class="mb-3"><label>Email</label><input type="email" class="form-control"></div>
+    <div class="mb-3"><label>Course</label><input type="text" class="form-control"></div>
+    <button class="btn btn-primary">Register</button>
+  </form>
+</div>
+</body></html>
+4. Dynamic User Input Display (JavaScript)
+html
+<!DOCTYPE html>
+<html><body>
+<h3>Enter your name:</h3>
+<input type="text" id="nameInput">
+<button onclick="showResult()">Submit</button>
+<p id="output"></p>
+
+<script>
+function showResult(){
+  const name = document.getElementById("nameInput").value;
+  document.getElementById("output").innerText = "Hello, " + name + "!";
+}
+</script>
+</body></html>
+5. Form Validation (JavaScript)
+html
+<!DOCTYPE html>
+<html><body>
+<h3>Registration Form</h3>
+<form onsubmit="return validateForm()">
+  First Name: <input type="text" id="fname"><br><br>
+  Last Name: <input type="text" id="lname"><br><br>
+  DOB: <input type="date" id="dob"><br><br>
+  Phone: <input type="text" id="phone"><br><br>
+  Email: <input type="text" id="email"><br><br>
+  <button type="submit">Submit</button>
+</form>
+<p id="msg" style="color:red"></p>
+
+<script>
+function validateForm(){
+  const fname = document.getElementById("fname").value.trim();
+  const lname = document.getElementById("lname").value.trim();
+  const dob = document.getElementById("dob").value;
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const msg = document.getElementById("msg");
+
+  if(!fname || !lname || !dob || !phone || !email){
+    msg.innerText = "All fields are required!"; return false;
+  }
+  if(!/^\S+@\S+\.\S+$/.test(email)){
+    msg.innerText = "Invalid email format!"; return false;
+  }
+  if(!/^\d{10}$/.test(phone)){
+    msg.innerText = "Phone number must be 10 digits!"; return false;
+  }
+  msg.style.color="green"; msg.innerText = "Form submitted successfully!";
+  return false; // prevent actual submit for demo
+}
+</script>
+</body></html>
+6. JS Arrays & Objects — Product Cards
+html
+<!DOCTYPE html>
+<html><head>
+<style>
+.card{display:inline-block;width:180px;margin:10px;padding:15px;border:1px solid #ccc;border-radius:8px;text-align:center;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+</style></head>
+<body>
+<h3>Product List</h3>
+<div id="products"></div>
+
+<script>
+const products = [
+  { name: "Laptop", price: 55000, category: "Electronics" },
+  { name: "Mobile Phone", price: 25000, category: "Electronics" },
+  { name: "Shoes", price: 2000, category: "Fashion" },
+  { name: "Book", price: 500, category: "Education" }
+];
+
+const container = document.getElementById("products");
+products.forEach(p => {
+  container.innerHTML += `
+    <div class="card">
+      <h4>${p.name}</h4>
+      <p>Price: ₹${p.price}</p>
+      <p>Category: ${p.category}</p>
+    </div>`;
+});
+</script>
+</body></html>
+7. jQuery DOM Manipulation
+html
+<!DOCTYPE html>
+<html><head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>#box{width:100px;height:100px;background:tomato;margin-top:10px}</style>
+</head><body>
+
+<p id="para">This is a paragraph.</p>
+<button id="toggleP">Hide/Show Paragraph</button><br><br>
+
+<div id="box"></div>
+<button id="fadeBtn">Fade Toggle Box</button>
+
+<script>
+$("#toggleP").click(function(){
+  $("#para").toggle(); // hide/show
+});
+
+$("#fadeBtn").click(function(){
+  $("#box").fadeToggle(); // fade in/out
+});
+</script>
+</body></html>
